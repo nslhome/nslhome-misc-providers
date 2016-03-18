@@ -73,6 +73,32 @@ Include as a module
 
 `require('nslhome-misc-providers')['wifi-provider'](CONFIG_NAME)`
 
+## IP Camera Provider
+
+Provides images from an IP network camera.  Tested with the D-Link DCS-5020L
+
+Config
+```
+{
+    "provider" : "ipcam-provider",
+    "name" : "CONFIG_NAME",
+    "config" : {
+        "httpProxyPort" : 9074,
+        "username" : "CAMERA_USERNAME",
+        "password" : "CAMERA_PASSWORD",
+        "jpgUrl" : "URL_TO_STILL_JPEG"
+    }
+}
+```
+
+Run as a standalone application
+
+`node ipcam-provider <CONFIG_NAME>`
+
+Include as a module
+
+`require('nslhome-misc-providers')['ipcam-provider'](CONFIG_NAME)`
+
 ## Release History
 
 1.0.0
