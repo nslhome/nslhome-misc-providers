@@ -28,7 +28,7 @@ var providerStarted = function(err, config) {
             switch (message.name) {
                 case "idle":
                     var device = {
-                        id: config.name + ":activity",
+                        id: provider.name + ":activity",
                         triggerState: !message.isIdle
                     };
 
@@ -38,14 +38,14 @@ var providerStarted = function(err, config) {
                 case "devices":
                     for (var i in message.devices) {
                         var d = message.devices[i];
-                        d.id = config.name + ":" + d.id;
+                        d.id = provider.name + ":" + d.id;
                         provider.send({name: 'device', body: d});
                     }
                     break;
 
                 case "playlist":
                     var device = {
-                        id: config.name + ":playlist:" + message.playlist,
+                        id: provider.name + ":playlist:" + message.playlist,
                         powerState: message.isPlaying
                     };
 
@@ -54,7 +54,7 @@ var providerStarted = function(err, config) {
 
                 case "event":
                     var event = {
-                        id: config.name + ":event:" + message.event,
+                        id: provider.name + ":event:" + message.event,
                         name: message.event
                     };
                     logger.verbose(event.name + " triggered");

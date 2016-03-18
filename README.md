@@ -19,6 +19,8 @@ You can optionally use the file `.nslhome.config` to store your configuration.
 
 ## Desktop Provider
 
+Works together with nslhome-windows-tray
+
  Config
 ```
 {
@@ -38,6 +40,38 @@ Run as a standalone application
 Include as a module
 
 `require('nslhome-misc-providers')['desktop-provider'](CONFIG_NAME)`
+
+## Wifi Presence Provider
+
+Acts as a syslog server for an Airport Extereme.  Configure the airport to send syslog message to the IP address where this provider is running.
+
+ Config
+```
+{
+    "provider" : "wifi-provider",
+    "name" : "CONFIG_NAME",
+    "config" : {
+        "devices" : [
+            {
+                "name" : "John Smith's Phone",
+                "mac" : "ff:ff:ff:ff:ff:ff"
+            },
+            {
+                "name" : "Jane Doe's Phone",
+                "mac" : "ee:ee:ee:ee:ee:ee"
+            }
+        ]
+    }
+}
+```
+
+Run as a standalone application
+
+`node wifi-provider <CONFIG_NAME>`
+
+Include as a module
+
+`require('nslhome-misc-providers')['wifi-provider'](CONFIG_NAME)`
 
 ## Release History
 

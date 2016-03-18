@@ -1,3 +1,4 @@
 module.exports = exports = providers = {
-    "desktop-provider": require('./lib/desktop-provider.js')
+    "desktop-provider": require('./desktop-provider.js'),
+    "wifi-provider": require('./wifi-provider.js')
 };
