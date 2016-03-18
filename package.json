@@ -1,0 +1,16 @@
+{
+  "name": "nslhome-misc-providers",
+  "version": "1.0.0",
+  "description": "Collection of various providers for nslhome.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Largent <nicklargent@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.12.0",
+    "express": "3.*",
+    "nslhome-core": "nslhome/nslhome-core"
+  }
+}
