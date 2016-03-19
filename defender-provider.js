@@ -115,7 +115,7 @@ var providerStarted = function(err, config) {
     _config = config;
 
     for (var i in config.channels) {
-        config.channels[i].id = config.name + ":camera:" + config.channels[i].ch;
+        config.channels[i].id = provider.name + ":camera:" + config.channels[i].ch;
 
         start_ffmpeg(config.channels[i]);
         start_framegrabber(config.channels[i]);
@@ -127,7 +127,7 @@ var providerStarted = function(err, config) {
             jpgUrl: "/" + provider.name + "/ch/" + i + "/image.jpg"
         };
 
-        send({name: 'device', body: device});
+        provider.send({name: 'device', body: device});
     }
 
     app.get('/' + provider.name + '/ch/:ch/image.jpg', function(req, res) {
@@ -144,7 +144,7 @@ var providerStarted = function(err, config) {
         }
     });
 
-    log("proxy listening on port " + config.httpProxyPort);
+    logger.verbose("proxy listening on port " + config.httpProxyPort);
     app.listen(config.httpProxyPort);
 };
 
