@@ -99,6 +99,39 @@ Include as a module
 
 `require('nslhome-misc-providers')['ipcam-provider'](CONFIG_NAME)`
 
+## Defender DVR Provider
+
+Provides images from up to 4 channels of a defender DVR unit using the mobile protocol.
+
+Config
+```
+{
+    "provider" : "defender-provider",
+    "name" : "CONFIG_NAME",
+    "config" : {
+        "httpProxyPort" : 9073,
+        "host" : "DVR_HOSTNAME",
+        "port" : 18004,
+        "username" : "DVR_MOBILE_USERNAME",
+        "password" : "DVR_MOBILE_PASSWORD",
+        "channels" : [
+            {"ch" : 1, "name" : "Driveway"},
+            {"ch" : 2, "name" : "Hallway"},
+            {"ch" : 3, "name" : "Backdoor"},
+            {"ch" : 4, "name" : "Roof"}
+        ]
+    }
+}
+```
+
+Run as a standalone application
+
+`node defender-provider <CONFIG_NAME>`
+
+Include as a module
+
+`require('nslhome-misc-providers')['defender-provider'](CONFIG_NAME)`
+
 ## Release History
 
 1.0.0
