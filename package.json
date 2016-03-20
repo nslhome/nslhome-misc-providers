@@ -9,8 +9,10 @@
   "author": "Nick Largent <nicklargent@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.12.0",
     "express": "3.*",
-    "nslhome-core": "nslhome/nslhome-core"
+    "moment": "^2.12.0",
+    "nslhome-core": "nslhome/nslhome-core",
+    "request": "^2.69.0",
+    "socket.io-client": "^1.3.7"
   }
 }
